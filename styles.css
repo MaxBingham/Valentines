@@ -1,0 +1,223 @@
+/* ======================
+   BASE / RESET
+   ====================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  background: #f6f6f6;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================
+   CAPTCHA
+   ====================== */
+
+#captcha-container {
+  max-width: 420px;
+  width: 100%;
+  padding: 20px;
+
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+}
+
+#captcha-container h1 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.captcha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.captcha-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.captcha-img:hover {
+  filter: brightness(0.9);
+  transform: scale(0.98);
+}
+
+.captcha-img.selected {
+  outline: 4px solid hotpink;
+  outline-offset: -4px;
+}
+
+#captcha-verify {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+
+  background: hotpink;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#captcha-verify:hover {
+  opacity: 0.9;
+}
+
+.captcha-error {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d00000;
+}
+
+/* ======================
+   ENVELOPE SCREEN
+   ====================== */
+
+#envelope-container {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+#envelope {
+  width: 200px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ======================
+   LETTER SCREEN
+   ====================== */
+
+#letter-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("heart-bg.jpg");
+}
+
+.letter-window {
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 3 / 2;
+
+  padding: 180px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-image: url("window.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 12px;
+  gap: 10px;
+
+  transform: scale(1.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.letter-window.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Scoped text styles (IMPORTANT) */
+.letter-window h1 {
+  font-size: 30px;
+}
+
+.letter-window p {
+  font-size: 40px;
+}
+
+/* ======================
+   CAT
+   ====================== */
+
+.cat {
+  width: 250px;
+  margin: 10px 0;
+  transition: width 0.4s ease;
+}
+
+.letter-window.final .cat {
+  width: 180px;
+}
+
+/* ======================
+   BUTTONS
+   ====================== */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+}
+
+.no-wrapper {
+  position: relative;
+}
+
+.btn {
+  width: 120px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.yes-btn {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.no-btn {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.15s ease;
+  cursor: default;
+}
+
+/* ======================
+   FINAL TEXT
+   ====================== */
+
+.final-text {
+  font-size: 22px;
+  line-height: 1.4;
+  padding: 10px 20px;
+
+  background-color: rgba(255, 240, 240, 0.5);
+  border-radius: 12px;
+}

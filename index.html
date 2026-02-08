@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- CAPTCHA SCREEN -->
+  <div id="captcha-container">
+    <h1>Select all images of us</h1>
+
+    <div class="captcha-grid">
+      <img src="img/img1.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img2.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img3.jpg" class="captcha-img" data-correct="true">
+      <img src="img/img4.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img5.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img6.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img7.jpg" class="captcha-img" data-correct="true">
+      <img src="img/img8.jpg" class="captcha-img" data-correct="false">
+      <img src="img/img9.jpg" class="captcha-img" data-correct="true">
+    </div>
+
+    <button id="captcha-verify">Verify</button>
+    <p id="captcha-error"></p>
+  </div>
+
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="image.png" alt="Envelope" id="envelope" />
+      <p>♡ Briefli für Mausi ♡</p>
+    </div>
+
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+        <h1 id="letter-title">Will you be my Valentine?</h1>
+
+        <img src="tenor.gif" class="dog" id="letter-cat" />
+
+        <div class="buttons" id="letter-buttons">
+          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+
+          <div class="no-wrapper">
+            <img src="no.png" class="btn no-btn" alt="No" />
+          </div>
+        </div>
+
+        <p id="final-text" class="final-text" style="display: none">
+        <strong>Valentine Date:</strong> Movie Night + Essen?
+        <img src="tenor (1).gif" class="final-screen" alt="final-screen">
+        </p>
+      </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
