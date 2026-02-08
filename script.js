@@ -1,3 +1,8 @@
+// Constants
+const BUTTON_POSITION_PADDING = 40;
+const CONFETTI_COUNT = 100;
+const CONFETTI_SPAWN_DELAY_MS = 30;
+
 // Get elements
 const questionContainer = document.getElementById('questionContainer');
 const yesContainer = document.getElementById('yesContainer');
@@ -28,8 +33,8 @@ noBtn.addEventListener('click', function(e) {
     const btnRect = btn.getBoundingClientRect();
     
     // Calculate random position within container
-    const maxX = containerRect.width - btnRect.width - 40;
-    const maxY = containerRect.height - btnRect.height - 40;
+    const maxX = containerRect.width - btnRect.width - BUTTON_POSITION_PADDING;
+    const maxY = containerRect.height - btnRect.height - BUTTON_POSITION_PADDING;
     
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
@@ -64,8 +69,8 @@ noBtn.addEventListener('mouseenter', function(e) {
         const containerRect = container.getBoundingClientRect();
         const btnRect = btn.getBoundingClientRect();
         
-        const maxX = containerRect.width - btnRect.width - 40;
-        const maxY = containerRect.height - btnRect.height - 40;
+        const maxX = containerRect.width - btnRect.width - BUTTON_POSITION_PADDING;
+        const maxY = containerRect.height - btnRect.height - BUTTON_POSITION_PADDING;
         
         const randomX = Math.random() * maxX;
         const randomY = Math.random() * maxY;
@@ -79,9 +84,8 @@ noBtn.addEventListener('mouseenter', function(e) {
 // Confetti effect
 function createConfetti() {
     const colors = ['#ff1493', '#ff69b4', '#ff6b9d', '#ffc3d4', '#ffb6c1'];
-    const confettiCount = 100;
     
-    for (let i = 0; i < confettiCount; i++) {
+    for (let i = 0; i < CONFETTI_COUNT; i++) {
         setTimeout(() => {
             const confetti = document.createElement('div');
             confetti.style.position = 'fixed';
@@ -117,6 +121,6 @@ function createConfetti() {
             setTimeout(() => {
                 confetti.remove();
             }, fallDuration * 1000);
-        }, i * 30);
+        }, i * CONFETTI_SPAWN_DELAY_MS);
     }
 }
